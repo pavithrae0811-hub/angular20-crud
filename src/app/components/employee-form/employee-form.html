@@ -1,0 +1,150 @@
+<div class="form-container">
+
+  <h1>
+    {{ isEditMode ? 'Edit Employee' : 'Add Employee' }}
+  </h1>
+
+  <form
+    [formGroup]="employeeForm"
+    (ngSubmit)="saveEmployee()">
+
+    <!-- Name -->
+
+    <div class="form-group">
+
+      <label for="name">
+        Name
+      </label>
+
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Enter employee name"
+      />
+
+      @if (
+        employeeForm.controls.name.touched &&
+        employeeForm.controls.name.invalid
+      ) {
+        <small>
+          Name is required.
+        </small>
+      }
+
+    </div>
+
+    <!-- Email -->
+
+    <div class="form-group">
+
+      <label for="email">
+        Email
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="Enter email"
+      />
+
+      @if (
+        employeeForm.controls.email.touched &&
+        employeeForm.controls.email.invalid
+      ) {
+        <small>
+          Please enter a valid email.
+        </small>
+      }
+
+    </div>
+
+    <!-- Department -->
+
+    <div class="form-group">
+
+      <label for="department">
+        Department
+      </label>
+
+      <select
+        id="department"
+        formControlName="department">
+
+        <option value="">
+          Select Department
+        </option>
+
+        <option value="IT">
+          IT
+        </option>
+
+        <option value="HR">
+          HR
+        </option>
+
+        <option value="Finance">
+          Finance
+        </option>
+
+        <option value="Marketing">
+          Marketing
+        </option>
+
+      </select>
+
+      @if (
+        employeeForm.controls.department.touched &&
+        employeeForm.controls.department.invalid
+      ) {
+        <small>
+          Department is required.
+        </small>
+      }
+
+    </div>
+
+    <!-- Salary -->
+
+    <div class="form-group">
+
+      <label for="salary">
+        Salary
+      </label>
+
+      <input
+        id="salary"
+        type="number"
+        formControlName="salary"
+        placeholder="Enter salary"
+      />
+
+      @if (
+        employeeForm.controls.salary.touched &&
+        employeeForm.controls.salary.invalid
+      ) {
+        <small>
+          Salary must be greater than 0.
+        </small>
+      }
+
+    </div>
+
+    <div class="actions">
+
+      <button type="submit">
+        {{ isEditMode ? 'Update Employee' : 'Add Employee' }}
+      </button>
+
+      <a
+        routerLink="/employees"
+        class="cancel">
+        Cancel
+      </a>
+
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,19 @@
+
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "John",
+      "email": "john@gmail.com",
+      "department": "IT",
+      "salary": 50000
+    },
+    {
+      "id": "2",
+      "name": "Priya",
+      "email": "priya@gmail.com",
+      "department": "HR",
+      "salary": 45000
+    }
+  ]
+}

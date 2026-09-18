@@ -1,0 +1,74 @@
+<div class="container">
+
+  <div class="header">
+    <h1>Employee Management</h1>
+
+    <a routerLink="/employees/add" class="add-button">
+      + Add Employee
+    </a>
+  </div>
+
+  @if (employees.length > 0) {
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Salary</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        @for (employee of employees; track employee.id) {
+
+          <tr>
+            <td>{{ employee.id }}</td>
+
+            <td>{{ employee.name }}</td>
+
+            <td>{{ employee.email }}</td>
+
+            <td>{{ employee.department }}</td>
+
+            <td>
+              ₹{{ employee.salary }}
+            </td>
+
+            <td>
+
+              <button
+                class="edit-button"
+                (click)="editEmployee(employee.id)">
+                Edit
+              </button>
+
+              <button
+                class="delete-button"
+                (click)="deleteEmployee(employee.id)">
+                Delete
+              </button>
+
+            </td>
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  } @else {
+
+    <div class="empty">
+      No employees found.
+    </div>
+
+  }
+
+</div>
