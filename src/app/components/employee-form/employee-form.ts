@@ -17,7 +17,7 @@ import { EmployeeService } from '../../services/employee';
     RouterLink
   ],
   templateUrl: './employee-form.html',
-  styleUrl: './employee-form.css'
+  styleUrl: './employee-form.scss'
 })
 export class EmployeeForm implements OnInit {
 

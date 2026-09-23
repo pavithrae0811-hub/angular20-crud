@@ -9,7 +9,7 @@ import { EmployeeService } from '../../services/employee';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './employee-list.html',
-  styleUrl: './employee-list.css'
+  styleUrl: './employee-list.scss'
 })
 export class EmployeeList implements OnInit {
 

@@ -26,9 +26,9 @@ body {
 .nav-links {
   display: flex;
   gap: 20px;
-}
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
